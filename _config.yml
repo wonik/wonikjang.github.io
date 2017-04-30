@@ -75,7 +75,7 @@ Blogroll:
 
 
 ### Build settings
-markdown: kramdown
+markdown: maruku
 #highlighter: pygments
 kramdown:
         input: GFM

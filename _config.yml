@@ -4,7 +4,7 @@ tagline: Wonik's Machine & Deep Learning Blog
 author: Wonik Jang
 email: jwimsms@gmail.com
 description: "Deep Learning" 
-keywords: "Wonik's Machine&Deep Learning Blog"
+keywords: "Wonik's Machine & Deep Learning Blog"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://wonikjang.github.io" # the base hostname & protocol for your site
 locale: en_us
@@ -13,7 +13,7 @@ locale: en_us
 github_username:  wonikjang
 disqus_shortname: wonikjang-github-io
 favicon:     "/images/favicon.ico"
-aboutme: Surfing into Deep Learning
+aboutme: Surfing into Deep Learning & Machine Learning on the board of Big Data
 aboutme_photo: "/images/surfing.jpg"
 #google_analytics_key:  UA-93680824-1 # put YOUR key here to enable tracking! (blank to disable)
 

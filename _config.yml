@@ -81,6 +81,5 @@ kramdown:
         input: GFM
         syntax_highlighter: rouge
 gems: [jekyll-paginate]
-- jekyll-seo-tag
 paginate: 5
 excerpt_separator: <!-- more -->

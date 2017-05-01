@@ -15,7 +15,7 @@ disqus_shortname: wonikjang-github-io
 favicon:     "/images/favicon.ico"
 aboutme: Surfing into Machine Learning and Deep Learning on the board of Big Data
 aboutme_photo: "/images/surfing.jpg"
-#google_analytics_key:  UA-93680824-1 # put YOUR key here to enable tracking! (blank to disable)
+google_analytics_key:  UA-98369519-1 
 
 
 ### Site setting:

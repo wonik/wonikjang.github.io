@@ -5,11 +5,11 @@
 
 // Our variables
 $base-font-family: 'Open Sans', Helvetica, Arial, sans-serif !important;
-$base-font-size:   8px;
+$base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.1em;
+$base-line-height: 1.6em;
 
-$spacing-unit:     7px;
+$spacing-unit:     15px;
 
 $text-color:       #111;
 $background-color: #f9f9f9;
@@ -26,8 +26,8 @@ $code-font-color:  #eee;
 
 
 // Width of the content area
-$content-width:    1160px;
-$page-width:       1200px;
+$content-width:    960px;
+$page-width:       1000px;
 
 $on-palm:          600px;
 $on-laptop:        800px;

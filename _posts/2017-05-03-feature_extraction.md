@@ -20,10 +20,13 @@ Description of convolution of an image with a few gabor filters.
 
 ![surfing_gabor](/result_images/surfing_gabor.png  "surfing_gabor")
 
+After the implementation, you can choose a few of gabor filters that effectively extract the feature of images. It's more or less similar to PCA(Principal Component Analysis)
+
 * Code for featrue extraction from images using gabor wavelet.
 
-For more codes about saving and importing the outputs using pickle(which is insanely fast), you can find them at my github:
+For more codes about saving and importing the outputs using pickle(which is insanely fast), you can find them at my github. 
 [wonikjang/python_code](https://github.com/wonikjang/python_code)
+
 
 # 1. functions 
 

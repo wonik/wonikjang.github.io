@@ -22,7 +22,7 @@ Description of convolution of an image with a few gabor filters.
 
 * Code for featrue extraction from images using gabor wavelet.
 
-For more codes about saving and importing the outputs using pickle(which is insanely fast), you can find them at my github. 
+For more codes about saving and importing the outputs using pickle(which is insanely fast), you can find them at my github:
 [wonikjang/python_code](https://github.com/wonikjang/python_code)
 
 # 1. functions 

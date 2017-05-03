@@ -3,8 +3,8 @@ layout: post
 title:  "Tensorflow GPU Install"
 date:   2017-04-13 7:00:00
 comments: yes
-categories: Deep_Learning
-tags: Deep_Learning Tensorflow
+categories: Tensorflow
+tags: Tensorflow GPU Install
 ---
 
 

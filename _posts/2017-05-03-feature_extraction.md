@@ -3,10 +3,11 @@ title: Feature Extraction from Image using gabor wavelet
 updated: 2017-04-30 09:35
 layout: post
 author: Wonik Jang 
-category:  Image_Processing, Feature_Extraction
+category:  Image_Processing, Feature_Extraction, CNN
 tags: 
 - Feature_Extraction
 - Image_Processing
+- CNN
 ---
 
 

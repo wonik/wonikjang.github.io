@@ -139,21 +139,30 @@ Same as the above Winodws installation, but select for Mac-osx version
 
 ## **Tensorflow Install in Terminal**
 
+0 Upgrade pip & six to the latest ones. 
+{% highlight ruby %}
+$ sudo easy_install --upgrade pip
+$ sudo easy_install --upgrade six 
+{% endhighlight %}
+
 1 In conda environment
 {% highlight ruby %}
 $ conda create -n tensorflow python=3.5
 {% endhighlight %}
-
 
 2 Activate tensorflow in conda environment
 {% highlight ruby %}
 source activate tensorflow
 {% endhighlight %}
 
+![tf_gpu1](/result_images/tf_gpu1.png,"tf_gpu1")
+
+
 3 GPU, python version 3.4 or 3.5 
 
 {% highlight ruby %}
-(tensorflow)$ export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow-0.11.0-py3-none-any.whl
+pip3 install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow_gpu-1.1.0-py3-none-any.whl
+Collecting tensorflow-gpu==1.1.0 from https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow_gpu-1.1.0-py3-none-any.whl
 {% endhighlight %}
 
 In case of python 3.x, use pip3 instead of pip 
@@ -173,10 +182,22 @@ $ python
 
 {% highlight ruby %}
 >>> import tensorflow as tf
+{% endhighlight %}
+
+Importing tensorlfow will show you comments like "successfully opened CUDA library libcudnn.5 dylib locally" 
+
+![tf_gpu2](/result_images/tf_gpu2.png,"tf_gpu2")
+
+
+{% highlight ruby %}
 >>> hello = tf.constant('Hello, Tensorflow')
 >>> sess = tf.Session()
 >>> print(sess.run(hello)) 
 {% endhighlight %}
+
+Finally, you can figure out that total memory of GPU is loaded (In my case, 2GB) 
+
+![tf_gpu3](/result_images/tf_gpu3.png,"tf_gpu3")
 
 If you encounter error message like below,
 

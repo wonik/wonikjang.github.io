@@ -155,7 +155,7 @@ $ conda create -n tensorflow python=3.5
 source activate tensorflow
 {% endhighlight %}
 
-![tf_gpu1](/result_images/tf_gpu1, "tf_gpu1")
+![tf_gpu1](/result_images/tf_gpu1.png, "tf_gpu1")
 
 
 3 GPU, python version 3.4 or 3.5 

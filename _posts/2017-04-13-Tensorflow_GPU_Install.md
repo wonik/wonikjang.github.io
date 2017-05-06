@@ -147,7 +147,7 @@ $ sudo easy_install --upgrade six
 
 1 In conda environment
 {% highlight ruby %}
-$ conda create -n tensorflow python=3.5
+$ conda create -n tensorflow 
 {% endhighlight %}
 
 2 Activate tensorflow in conda environment
@@ -198,7 +198,7 @@ Importing tensorlfow will show you comments like "successfully opened CUDA libra
 
 Finally, you can figure out that total memory of GPU is loaded (In my case, 2GB) 
 
-![tf_gpu3](/result_images/tf_gpu3.png, "tf_gpu3")
+![](/result_images/tf_gpu3.png) tf_gpu3
 
 If you encounter error message like below,
 

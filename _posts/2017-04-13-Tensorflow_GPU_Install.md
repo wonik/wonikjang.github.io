@@ -155,7 +155,7 @@ $ conda create -n tensorflow python=3.5
 source activate tensorflow
 {% endhighlight %}
 
-![tf_gpu1](/result_images/tf_gpu1.png,"tf_gpu1")
+![tf_gpu1](/result_images/tf_gpu1.png, "tf_gpu1")
 
 
 3 GPU, python version 3.4 or 3.5 
@@ -186,7 +186,7 @@ $ python
 
 Importing tensorlfow will show you comments like "successfully opened CUDA library libcudnn.5 dylib locally" 
 
-![tf_gpu2](/result_images/tf_gpu2.png,"tf_gpu2")
+![tf_gpu2](/result_images/tf_gpu2.png, "tf_gpu2")
 
 
 {% highlight ruby %}
@@ -197,7 +197,7 @@ Importing tensorlfow will show you comments like "successfully opened CUDA libra
 
 Finally, you can figure out that total memory of GPU is loaded (In my case, 2GB) 
 
-![tf_gpu3](/result_images/tf_gpu3.png,"tf_gpu3")
+![tf_gpu3](/result_images/tf_gpu3.png, "tf_gpu3")
 
 If you encounter error message like below,
 

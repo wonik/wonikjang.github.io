@@ -161,8 +161,7 @@ source activate tensorflow
 3 GPU, python version 3.4 or 3.5 
 
 {% highlight ruby %}
-pip3 install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow_gpu-1.1.0-py3-none-any.whl
-Collecting tensorflow-gpu==1.1.0 from https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow_gpu-1.1.0-py3-none-any.whl
+pip3 install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/gpu/tensorflow_gpu-1.0.0-py3-none-any.whl
 {% endhighlight %}
 
 In case of python 3.x, use pip3 instead of pip 

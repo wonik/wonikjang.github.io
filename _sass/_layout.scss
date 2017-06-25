@@ -44,12 +44,13 @@
   .page-link {
     color: $grey-color-dark;
     line-height: $base-line-height;
+    text-align: center;
 
     // Gaps between nav items, but not on the first one
 
     margin-left: 10px;
     margin-right: 10px;
-
+    
   }
 
   a{

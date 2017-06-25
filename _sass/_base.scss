@@ -68,19 +68,19 @@ ul, ol, dl, figure,
 .col-sm-8,.col-sm-2{
   position:relative;
   min-height:1px;
-  margin: 0px 10px;
+  margin: 0px 5px;
 }
 
 
 @media screen and (min-width : $on-palm) {
   .col-sm-8 {
     float:left;
-    width:65%;
+    width:75%;
   }
 
   .col-sm-2 {
     float:right;
-    width:25%;
+    width:20%;
   }
 }
 

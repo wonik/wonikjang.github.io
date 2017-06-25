@@ -24,10 +24,17 @@ $grey-color-dark:  darken($grey-color, 25%);
 $code-backgroud-color: #29281e;
 $code-font-color:  #eee;  
 
+.repository-with-sidebar .repository-content {
+  width: calc(100% - 50px);
+}
+
+.container {
+  width: 90%;
+}
 
 // Width of the content area
 $content-width:    960px;
-$page-width:       1200px;
+$page-width:       1000px;
 
 $on-palm:          600px;
 $on-laptop:        1000px;

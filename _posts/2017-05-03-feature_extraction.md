@@ -3,7 +3,7 @@ title: Feature Extraction from Image using gabor wavelet
 updated: 2017-04-30 09:35
 layout: post
 author: Wonik Jang 
-category: DL_Supervised_filter_GavorWavelet
+category: DeepLearning_Supervised_filter_GavorWavelet
 tags: 
 - Gavor_Wavelet
 ---

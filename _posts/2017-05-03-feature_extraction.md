@@ -19,7 +19,7 @@ Filtering an image by gabor wavelet is one of the widely used method for feature
 
 Description of convolution of an image with a few gabor filters. 
 
-![surfing_gabor](/result_images/surfing_gabor.png  "surfing_gabor")
+![surfing_gabor](/result_images/surfing_gabor_resized.png  "surfing_gabor")
 
 After the implementation, you can choose a few of gabor filters that effectively extract the feature of images. It's more or less like PCA(Principal Component Analysis)
 

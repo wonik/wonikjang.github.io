@@ -11,6 +11,10 @@
   {% if site.email != empty %}
   <a href="mailto:{{site.email}}" title="mailto: {{site.email}}"><i class="fa fa-envelope-square fa-3x"></i></a>&nbsp;
   {% endif %}
+   
+  {% if site.linkedin != empty %}
+  <a href="mailto:{{site.email}}" title="mailto: {{site.linkedin}}"><i class="fa fa-envelope-square fa-3x"></i></a>&nbsp;
+  {% endif %}
   
   {% if site.github_username != empty %}
   <a href="https://github.com/{{site.github_username}}" title="GithubID: {{site.github_username}}"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;

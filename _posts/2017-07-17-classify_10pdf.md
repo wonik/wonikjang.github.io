@@ -15,11 +15,11 @@ To escape the possibility of label inaccuracy, I introduced not [0, 1], but the 
 
 # **Contents**
 
-# 0. Convert label to fuzzy system
-# 1. Import images and balance batches
-# 2. Train module
-# 3. Test module
-# 4. Unknown labeled images validation - skip
+**0. Convert label to fuzzy system**
+**1. Import images and balance batches**
+**2. Train module**
+**3. Test module**
+**4. Unknown labeled images validation - skip**
 
 # **0.Fundamental tweak - Replacement of integer by fuzzy system**
 
@@ -42,11 +42,11 @@ if filename ==‘b’
 
 {% endhighlight %}
 
-# 1.1 Batch specifications from +/-
+# **1.1 Batch specifications from +/-**
 
 My task was to import image data labeled as +/-. On the purpose of balancing the amount of +/-  images in a batch, I generate the batch to comprise half of each +/- image.  To ensure data randomization, I shuffled each +/- images after an epoch. In addition, if an index for the batch list is out of list size,  my code will insert the rest of images and add them from the start of the list. Finally, since the number of +/- images are different in my project, I made this procedure work separately for each +/- images.
 
-# 1.2 Convert images
+# **1.2 Convert images**
 
 In terms of generating images from batch, I first resize images according to the normal ratio of original images(width/height) and interpolate them using nearest resample method, which can keep the information of images. Using like “PIL.Image.ANTIALIAS”, which is widely applicable in Photoshop, will smooth images and result in losing information of images. To implement this module, save the below script as makebatch.py .   
 
@@ -163,7 +163,7 @@ def datagenerate(pads):
 {% endhighlight %}
 
 
-# 2.
+# **2. Train module**
 After importing a batch, the CNN model is a convolution set (32C16 + MP2) with MLP2. The 32C16 indicates 32 neurons  and the size of each neuron is 16 by 16. MP2 is for max pooling  with stride 2. Finally MLP2(Multi-Layer Perceptron) is for fully connected layer with 2 hidden layer.   
 
 
@@ -277,7 +277,7 @@ saver.save(sess, "path/to/save/model/model")
 
 {% endhighlight %}
 
-# 3.
+# **3.Test module**
 The goal of this procedure is to save a table of [image, label(0 or 1), prediction(0 ~ 9)(index of the maximum value among outputs) , probability of the maximum output value , weighted average of probabilities. Displaying the label, prediction, probability on prediction, and weighted average of probabilities can tell us not not just 2 classes, but implied probabilities and the ratings of 10 classes.
 
 {% highlight ruby %}

@@ -7,6 +7,8 @@ category: DeepLearning_Supervised_classification_Fuzzy
 tags:
 - Classification
 - Fuzzy System
+- python
+- tensorflow 
 ---
 
 # **Classification with Fuzzy system**

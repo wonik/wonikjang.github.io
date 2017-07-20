@@ -6,6 +6,9 @@ author: Wonik Jang
 category: DeepLearning_Supervised_filter_GavorWavelet
 tags: 
 - Gavor_Wavelet
+- filter
+- python
+- tensorflow 
 ---
 
 

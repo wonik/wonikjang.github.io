@@ -16,9 +16,13 @@ To escape the possibility of label inaccuracy, I introduced not [0, 1], but the 
 # **Contents**
 
 **0. Convert label to fuzzy system**
+
 **1. Import images and balance batches**
+
 **2. Train module**
+
 **3. Test module**
+
 **4. Unknown labeled images validation - skip**
 
 # **0.Fundamental tweak - Replacement of integer by fuzzy system**

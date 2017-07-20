@@ -364,3 +364,6 @@ unkresult = pd.DataFrame({"file":flist, "label":label, "prediction":predlist, "p
 unkresult.to_csv("path/to/save/csvfile/okresult.csv", index=False)
 
 {% endhighlight %}
+
+![classify10pdfres](/result_images/classify_10pdf_result.png  "classify10pdfres")
+

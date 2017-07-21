@@ -14,19 +14,19 @@ tags:
 
 # **Gabor Wavelet(Filter)**
 
-Filtering an image by gabor wavelet is one of the widely used method for feature extraction. Convolutioning an image with gabor filters generates transformed images. Beolw image shows 200 gabor filters that can extract featrues from an images alomst as similar as human visual system does.
+Filtering an image by Gabor wavelet is one of the widely used methods for feature extraction. Convolutioning an image with Gabor filters generates transformed images. Below image shows 200 Gabor filters that can extract features from images almost as similar as a human visual system does.
 
 ![gabor](/result_images/gabor_wavelet.jpg  "gabor")
 
-Description of convolution of an image with a few gabor filters. 
+Description of the convolution of an image with a few Gabor filters. 
 
 ![surfing_gabor](/result_images/surfing_gabor_resized.png  "surfing_gabor")
 
-After the implementation, you can choose a few of gabor filters that effectively extract the feature of images. It's more or less like PCA(Principal Component Analysis)
+After the implementation, you can choose a few of Gabor filters that effectively extract the feature of images. It's more or less like PCA(Principal Component Analysis)
 
-* Code for featrue extraction from images using gabor wavelet.
+* Code for feature extraction from images using Gabor wavelet.
 
-For more codes about saving and importing the outputs using pickle(which is insanely fast), you can find them at my github. 
+For more codes about saving and importing the outputs using pickle(which is insanely fast), you can find them on my GitHub. 
 [wonikjang/python_code](https://github.com/wonikjang/python_code)
 
 
@@ -42,7 +42,7 @@ import tensorflow as tf
 import pickle
 from scipy.misc import toimage
 
-### 1-1 Save 200 gabor masks of panda data frame ( Panda is the fastest one ) & convert it as tf objects
+### 1-1 Save 200 Gabor masks of panda data frame ( Panda is the fastest one ) & convert it as tf objects
 # -> Output: array of tf objects
 
 

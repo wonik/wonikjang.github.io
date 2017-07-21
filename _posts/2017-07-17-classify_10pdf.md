@@ -13,7 +13,8 @@ tags:
 
 # **Classification with Fuzzy system**
 
-To escape the possibility of label inaccuracy, I introduced not [0, 1], but the pdf with 10 density(Fuzzy system). Applying PDF for the class label will not only lead data scientist to resolve inaccuracy of data label , but also empower themselves to suggest ratings of a product by maximum value with probability and average score.
+To escape the possibility of label inaccuracy, I introduced not [0, 1], but the pdf with 10 density(Fuzzy system). Applying PDF for the class label will not only lead data scientist to resolve inaccuracy of data label but also empower themselves to suggest ratings of a product by maximum value with probability and average score.
+
 
 # **Contents**
 
@@ -29,13 +30,13 @@ To escape the possibility of label inaccuracy, I introduced not [0, 1], but the 
 
 # **0.Fundamental tweak - Replacement of integer by fuzzy system**
 
-Traditional way of labeling an image for binary classification is to set 0 for + and 1 for -. However, in the case of deciding goodness of an product by image, such way can't suggest the degree of goodness and badness. In addition, it's difficult to apply such classification method when the label is indefinite. To overcome such limitations, I generate 10 output labels, where each of them is actually pdf, and the pdf value decreases as the further from the focal location with a constant interval. Such PDF(Probability Density Function) can be replaced with Gaussian, Exponential, or gamma distribution. Setting PDF, which take on continuous values between 0 and 1, is called “Fuzzy system”. Below graph illustrates how different fuzzy system from the setting of integer value.   
+The traditional way of labeling an image for binary classification is to set 0 for + and 1 for -. However, in the case of deciding goodness of a product by image, such way can't suggest the degree of goodness and badness. In addition, it's difficult to apply such classification method when the label is indefinite. To overcome such limitations, I generate 10 output labels, where each of them is actually pdf, and the pdf value decreases as the further from the focal location with a constant interval. Such PDF(Probability Density Function) can be replaced with Gaussian, Exponential, or gamma distribution. Setting PDF, which takes on continuous values between 0 and 1, is called “Fuzzy system”. Below graph illustrates how different fuzzy system from the setting of an integer value.   
 
-Although I analyzed how unknown labelled images are classified and validate them with functions that I made, I will skip it here. Please email me if you are interested in it.
+Although I analyzed how unknown labeled images are classified and validate them with functions that I made, I will skip it here. Please email me if you are interested in it.
 
 ![classify10pdf](/result_images/classify_10pdf_resized.png  "classify10pdf")
 
-Although lots of examples for CNN with MNIST data uses one-hot-encoding labels, little tweak on setting label can change it as fuzzy system like this.
+Although lots of examples for CNN with MNIST data uses one-hot-encoding labels, a little tweak on setting label can change it as the fuzzy system like this.
 
 {% highlight ruby %}
 
@@ -54,7 +55,7 @@ My task was to import image data labeled as +/-. On the purpose of balancing the
 
 # **1.2 Convert images**
 
-In terms of generating images from batch, I first resize images according to the normal ratio of original images(width/height) and interpolate them using nearest resample method, which can keep the information of images. Using like “PIL.Image.ANTIALIAS”, which is widely applicable in Photoshop, will smooth images and result in losing information of images. To implement this module, save the below script as makebatch.py .   
+In terms of generating images from the batch, I first resize images according to the normal ratio of original images(width/height) and interpolate them using nearest resample method, which can keep the information of images. Using like “PIL.Image.ANTIALIAS”, which is widely applicable in Photoshop, will smooth images and result in losing information of images. To implement this module, save the below script as makebatch.py.   
 
 {% highlight ruby %}
 
@@ -170,7 +171,7 @@ def datagenerate(pads):
 
 
 # **2. Train module**
-After importing a batch, the CNN model is a convolution set (32C16 + MP2) with MLP2. The 32C16 indicates 32 neurons  and the size of each neuron is 16 by 16. MP2 is for max pooling  with stride 2. Finally MLP2(Multi-Layer Perceptron) is for fully connected layer with 2 hidden layer.   
+After importing a batch, the CNN model is a convolution set (32C16 + MP2) with MLP2. The 32C16 indicates 32 neurons and the size of each neuron is 16 by 16. MP2 is for max pooling with stride 2. Finally, MLP2(Multi-Layer Perceptron) is for the fully connected layer with 2 hidden layers.   
 
 
 {% highlight ruby %}
@@ -284,7 +285,7 @@ saver.save(sess, "path/to/save/model/model")
 {% endhighlight %}
 
 # **3.Test module**
-The goal of this procedure is to save a table of [image, label(0 or 1), prediction(0 ~ 9)(index of the maximum value among outputs) , probability of the maximum output value , weighted average of probabilities. Displaying the label, prediction, probability on prediction, and weighted average of probabilities can tell us not not just 2 classes, but implied probabilities and the ratings of 10 classes.
+The goal of this procedure is to save a table of [image, label(0 or 1), prediction(0 ~ 9)(index of the maximum value among outputs), the probability of the maximum output value, weighted average of probabilities. Displaying the label, prediction, probability on prediction, and weighted average of probabilities can tell us not just 2 classes but implied probabilities and the ratings of 10 classes.
 
 {% highlight ruby %}
 

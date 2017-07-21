@@ -28,7 +28,7 @@ Installing Python by Anaconda will easily set up environments and manage librari
 
 [Anaconda][Anaconda-] 
 
-Although you can install python 3.5 with the above latest Anaconda version, you can download Anaconda 4.2.0 version , which has python 3.5 as the latest one. (At this momment, the latest python version is 3.6, which is not compatible with Tensorflow GPU for Windows)  
+Although you can install Python 3.5 with the above latest Anaconda version, you can download Anaconda 4.2.0 version, which has python 3.5 as the latest one. (At this moment, the latest python version is 3.6, which is not compatible with Tensorflow GPU for Windows)   
 
 [Anaconda Archive][Anacondaarc] 
 
@@ -42,7 +42,7 @@ Although you can install python 3.5 with the above latest Anaconda version, you 
 
 **Download**
 
-CUDA driver according to your windows version and GPU version. In my case, I downloaded driver for NVIDIA GeForce 920MX by checking display adapter from system manager. 
+CUDA driver according to your windows version and GPU version. In my case, I downloaded a driver for NVIDIA GeForce 920MX by checking display adapter from the system manager. 
 
 [CUDA Driver][driver]
 
@@ -50,7 +50,7 @@ Cuda toolkit version 8.0 or above is required
 
 [CUDA Toolkit][toolkit]
 
-Cuda Cudnn is GPU-accelerated library for deep learning neural network. 5.1 version or above is required. 
+Cuda Cudnn is a GPU-accelerated library for deep learning neural network. 5.1 version or above is required. 
 
 [CUDA cuDNN][cudnn]
 
@@ -138,7 +138,7 @@ Successfully opened CUDA library
 
 ## **Anaconda & Cuda Download**
 
-Same as the above Winodws installation, but select for Mac-osx version 
+Same as the above Windows installation, but select for Mac-OSX version. 
 
 ## **Tensorflow Install in Terminal**
 

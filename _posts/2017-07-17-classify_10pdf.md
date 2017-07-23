@@ -9,6 +9,8 @@ tags:
 - Fuzzy System
 - python
 - tensorflow 
+- CNN 
+- Probability Density Function
 ---
 
 # **Classification with Fuzzy system**

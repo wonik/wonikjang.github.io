@@ -17,7 +17,7 @@ tags:
 
 To escape the possibility of label inaccuracy, I introduced not [0, 1], but the pdf with 10 density(Fuzzy system). Applying PDF for the class label will not only lead data scientist to resolve inaccuracy of data label but also empower themselves to suggest ratings of a product by maximum value with probability and average score.
 
-![classify10pdf](/result_images/classify_10pdf_final_resized.png  "classify10pdf")
+![classify10pdf](/result_images/classify_10pdf_final_resized.jpg  "classify10pdf")
 
 
 # **Contents**

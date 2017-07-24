@@ -17,6 +17,8 @@ tags:
 
 To escape the possibility of label inaccuracy, I introduced not [0, 1], but the pdf with 10 density(Fuzzy system). Applying PDF for the class label will not only lead data scientist to resolve inaccuracy of data label but also empower themselves to suggest ratings of a product by maximum value with probability and average score.
 
+![classify10pdf](/result_images/classify_10pdf_final_resized.png  "classify10pdf")
+
 
 # **Contents**
 
@@ -36,7 +38,6 @@ The traditional way of labeling an image for binary classification is to set 0 f
 
 Although I analyzed how unknown labeled images are classified and validate them with functions that I made, I will skip it here. Please email me if you are interested in it.
 
-![classify10pdf](/result_images/classify_10pdf_resized.png  "classify10pdf")
 
 Although lots of examples for CNN with MNIST data uses one-hot-encoding labels, a little tweak on setting label can change it as the fuzzy system like this.
 

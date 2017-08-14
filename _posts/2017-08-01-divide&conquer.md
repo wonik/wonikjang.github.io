@@ -23,6 +23,24 @@ Although classifying MNIST data can be achieved with small convolution set becau
 
 In tensorflow, you can generate multiple weights and bias for each grid of an image like this.
 
+
+**Generate multiple Grids of an image**
+{% highlight ruby %}
+
+# Divide an image by shape of a grid 
+def blockshaped(arr, nrows, ncols):
+    h, w = arr.shape
+    return (arr.reshape(h//nrows, nrows, -1, ncols)
+               .swapaxes(1,2)
+               .reshape(-1, nrows, ncols))
+
+
+{% endhighlight %}
+
+
+
+**function generating weights and bias**
+
 {% highlight ruby %}
 
 # Weight and Bias for one grid CNN and FC

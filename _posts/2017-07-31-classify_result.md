@@ -19,9 +19,13 @@ Basically, this post is about how to wrap up the results from training classific
 
 Different standard deviation(I assumed covariance matrix as std * Identity matrix) in Multivariate Gaussian across ratings can be displayed like the above. Since I will use half of Gaussian distribution with mutually exclusive classes and cross-entropy as a cost function, I set up the sum of pdf equals 1 and each probability value is between 0 and 1(for sure). Although softmax function will satisfy those two criteria, I pre-adjust the settings.
 
+![max_4](/result_images/max_4.png  "max_4")
+
+Although fundamental way of classification is to check argmax of the outputs, the average value across 10 output nodes is important here because it provides the degree of goodness and inferiority.   
+
 ![expectation_4](/result_images/expectation_4.png  "expectation_4")
 
-![max_4](/result_images/max_4.png  "max_4")
+
 
 To validate the model, I made a bar plot for the max position(prediction) and mean position(expectation) of 10 output nodes grouped by different Std. With respect to fitted value(good and bad images), the result shows that the model is quite-well trained in terms of max and mean position. For prediction(Unknown images), the higher Std, the more images are distributed across ratings.  
 

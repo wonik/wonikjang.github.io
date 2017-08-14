@@ -25,6 +25,7 @@ In tensorflow, you can generate multiple weights and bias for each grid of an im
 
 
 **Generate multiple Grids of an image**
+
 {% highlight ruby %}
 
 # Divide an image by shape of a grid 

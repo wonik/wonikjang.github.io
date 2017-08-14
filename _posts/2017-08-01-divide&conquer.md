@@ -40,7 +40,7 @@ def blockshaped(arr, nrows, ncols):
 
 
 
-**function generating weights and bias**
+**Functions generating weights and bias**
 
 {% highlight ruby %}
 

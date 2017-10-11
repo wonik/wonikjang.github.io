@@ -204,11 +204,6 @@ def build_model(num_users, num_items, latent_dim):
 
     user_embedding = Flatten()(Embedding( num_users, latent_dim, name='user_embedding', input_length=1)(user_input))
 
-    # densely connected on
-    positive_item_embedding = Dense(512, activation= 'tanh')(positive_item_embedding)
-    negative_item_embedding = Dense(512, activation= 'tanh')(negative_item_embedding)
-    user_embedding = Dense(512, activation= 'tanh')(user_embedding)
-
     # Loss and model
     loss = merge(
         [positive_item_embedding, negative_item_embedding, user_embedding],

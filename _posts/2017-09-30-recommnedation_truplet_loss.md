@@ -56,7 +56,7 @@ def download_movielens(dest_path):
 
 def get_raw_movielens_data():
 
-    path = '/Users/wonikJang/PycharmProjects/insta/movielens.zip'
+    path = '/path/to/data/saved/movielens.zip'
 
     if not os.path.isfile(path):
         download_movielens(path)

@@ -17,11 +17,7 @@ Basically, this post is about how to wrap up the results from training classific
 
 ![normal_4](/result_images/normal_4.png  "normal_4")
 
-Different standard deviation(I assumed covariance matrix as std * Identity matrix) in Multivariate Gaussian across ratings can be displayed like the above. Since I will use half of Gaussian distribution with mutually exclusive classes and cross-entropy as a cost function, I set up the sum of pdf equals 1 and each probability value is between 0 and 1(for sure). Although softmax function will satisfy those two criteria, I pre-adjust the settings.
-
-![max_4](/result_images/max_4.png  "max_4")
-
-Although fundamental way of classification is to check argmax of the outputs, the average value across 10 output nodes is important here because it provides the degree of goodness and inferiority.   
+Different standard deviation(I assumed covariance matrix as std * Identity matrix) in Multivariate Gaussian across ratings can be displayed like the above. Since I will use half of Gaussian distribution with mutually exclusive classes and cross-entropy as a cost function, I set up the sum of pdf equals 1 and each probability value is between 0 and 1(for sure). Although softmax function will satisfy those two criteria, I pre-adjust the settings. On the purpose of grading , the average value across 10 output nodes is used here because it provides the degree of goodness and inferiority.   
 
 ![expectation_4](/result_images/expectation_4.png  "expectation_4")
 

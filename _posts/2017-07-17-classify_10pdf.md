@@ -20,7 +20,9 @@ To escape the possibility of label inaccuracy, I introduced not [0, 1], but the 
 ![classify10pdf](/result_images/classify_10pdf_final_resized.jpg  "classify10pdf")
 
 
-# **Contents**
+# **Contents** 
+
+Modification: Only training code will be left here. 
 
 **0. Convert label to fuzzy system**
 
@@ -60,117 +62,6 @@ My task was to import image data labeled as +/-. On the purpose of balancing the
 
 In terms of generating images from the batch, I first resize images according to the normal ratio of original images(width/height) and interpolate them using nearest resample method, which can keep the information of images. Using like “PIL.Image.ANTIALIAS”, which is widely applicable in Photoshop, will smooth images and result in losing information of images. To implement this module, save the below script as makebatch.py.   
 
-{% highlight ruby %}
-
-import numpy as np
-import random
-from PIL import Image
-import PIL
-from os import listdir
-from os.path import isfile, join
-from operator import itemgetter
-
-p = ['path/to/your/script/image/bad/', 'path/to/your/script/image/ok/']
-phead = 'path/to/your/script/imgage/'
-
-
-
-
-def readfile(p):
-    onlyfiles = [ f for f in listdir( p) if isfile( join( p, f ) ) ]
-    file = [ p + s for s in onlyfiles]
-
-    print( '%d files found...'%len(file) )
-    print( '    1st file = ' + file[0] )
-    return file
-
-
-class Batch() :
-
-    def __init__(self):
-
-        self.badindex  = 0; self.goodindex  = 0;
-
-        self.badfile = readfile(p[0]); self.goodfile = readfile(p[1]);
-
-        self.badfile = sorted(self.badfile, key=lambda * args: random.random())
-        self.goodfile = sorted(self.goodfile, key=lambda * args: random.random())
-
-
-    def indexing(self, batchsize):
-
-        self.batchhalf = int(batchsize/2)  
-
-        if ((len(self.badfile) - self.badindex) <= self.batchhalf) :
-
-            a00 = range(self.badindex, len(self.badfile) )
-            self.badindex = self.batchhalf - len(a00)
-            a01 = range(0, self.badindex)
-            b0 = [i for j in (a00, a01) for i in j]
-
-            self.badfile = sorted(self.badfile, key=lambda * args: random.random())
-
-        else:
-            b0 = range(self.badindex, (self.badindex + self.batchhalf ) )
-
-
-        if ((len(self.goodfile) - self.goodindex) <= self.batchhalf) :      
-
-            a10 = range(self.goodindex, len(self.goodfile) )
-            self.goodindex = self.batchhalf - len(a10)
-            a11 = range(0, self.goodindex)
-            b1 = [i for j in (a10, a11) for i in j]
-
-            self.goodfile = sorted(self.goodfile, key=lambda * args: random.random())
-
-        else:
-            b1 = range(self.goodindex, (self.goodindex + self.batchhalf ) )
-
-        bad = itemgetter(* b0)(self.badfile)
-        good = itemgetter(* b1)(self.goodfile)
-
-        allfile = bad + good
-
-        return allfile
-
-
-    def next_batch(self):
-        self.badindex = self.badindex + self.batchhalf
-        self.goodindex = self.goodindex + self.batchhalf
-
-
-
-def datagenerate(pads):
-#### Cionvert images and name -> arrays of X & Y
-    new_width = 512 ; new_height = 64
-
-    padlist=[]; labellist=[]
-    for file in pads:
-        # For X
-        img0 = Image.open(file)
-        img0 = img0.resize((new_width, new_height),  resample = PIL.Image.NEAREST)
-        img0 = np.reshape(img0, -1)
-        img0 = img0 / 255.
-        img0 = img0.astype(np.float32)
-        padlist.append(img0)
-
-        # For Y
-        filename = file.split(phead,1)[1][0]
-
-        if  filename == "o" :
-            label = np.array( [ 1, 1, 0.875, 0.75, 0.625, 0.5, 0.375, 0.250, 0.125, 0 ] ) / 5.5
-
-        elif filename == "b" :
-            label = np.array( [ 0, 0.125, 0.250, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1 ]) / 5.5
-
-        labellist.append(label)
-
-    filearray = np.asarray(padlist)
-    labelarray = np.asarray(labellist)
-
-    return (filearray, labelarray)
-
-{% endhighlight %}
 
 
 # **2. Train module**
@@ -287,89 +178,6 @@ saver.save(sess, "path/to/save/model/model")
 
 {% endhighlight %}
 
-# **3.Test module**
-The goal of this procedure is to save a table of [image, label(0 or 1), prediction(0 ~ 9)(index of the maximum value among outputs), the probability of the maximum output value, weighted average of probabilities. Displaying the label, prediction, probability on prediction, and weighted average of probabilities can tell us not just 2 classes but implied probabilities and the ratings of 10 classes.
-
-{% highlight ruby %}
-
-import tensorflow as tf
-import numpy as np
-import pandas as pd
-import os
-import makebatch
-
-
-################################## Session Import
-
-sess = tf.InteractiveSession()
-col_saver = tf.train.import_meta_graph('path/to/save/model/model.meta')
-col_saver.restore(sess, "path/to/save/model/model")
-
-tf.get_default_graph().as_graph_def()
-
-x = sess.graph.get_tensor_by_name("input:0")
-y_conv = sess.graph.get_tensor_by_name("output:0")
-cr  = tf.argmax( tf.nn.softmax( y_conv ) , 1 )
-cr2 = tf.nn.softmax( y_conv )
-
-
-p =  'path/to/save/image/ok/'
-tfile = makebatch.readfile( p ) ;
-
-try :
-    nnum = len(tfile)
-
-    predlist = []
-    problist = []
-    flist = []
-
-    for i in range( nnum ) :
-
-        teX , orgimg , fname = makebatch.getnonlabel( i , tfile , p )
-
-        prediction, probs  = sess.run( [ cr , cr2 ] , feed_dict ={ x : teX } )
-        # 1. change teY as number
-
-        predlist.append( prediction )
-        problist.append( probs )
-        flist.append( fname )
-
-        print( str( i ) + ' : ' + fname + ' -->' + str( prediction ) )
-
-
-except :    
-    print( 'exception occurred...' )
-    sess.close()
-
-# Change the type of predlist as integer
-predlist = list( map(int, predlist) )
-
-####################### Generate probxpx #############################
-# 1. Probabilities normalize
-probnorm = []
-for i in range(len(problist)):
-    prob = problist[i].flatten()
-    probfin = problist[i] / sum(prob)     
-    probnorm.append(probfin)
-
-# 2. Sum( X*P(X) ) / [ Sum(P(X))=1 ]
-probxpx = []
-for j in range(len(probnorm)):
-    prob = probnorm[j].flatten()
-    prob = prob.tolist()
-
-    mul = 0
-    for index, value in enumerate(prob):
-        mul += index * value
-    probxpx.append(mul)
-
-######## For the label, bad = 1 and good = 0  
-label = [1] * len(tfile)
-
-unkresult = pd.DataFrame({"file":flist, "label":label, "prediction":predlist, "probxpx": probxpx })
-unkresult.to_csv("path/to/save/csvfile/okresult.csv", index=False)
-
-{% endhighlight %}
 
 ![classify10pdfres](/result_images/classify_10pdf_result.png  "classify10pdfres")
 

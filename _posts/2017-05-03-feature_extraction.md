@@ -24,7 +24,7 @@ Description of the convolution of an image with a few Gabor filters.
 
 After the implementation, you can choose a few of Gabor filters that effectively extract the feature of images. It's more or less like PCA(Principal Component Analysis)
 
-# Feature extraction functions by Gabor wavelet.
+# **Feature extraction functions by Gabor wavelet**
 
 {% highlight ruby %}
 import os

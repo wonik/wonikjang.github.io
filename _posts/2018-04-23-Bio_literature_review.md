@@ -74,9 +74,6 @@ Secondly, HC-MLE mazimizes the likelihood of sequences that received Top K highe
 
 ## **Reference**
 
-- Github of VAE with property prediction : [Chemical VAE][Chemical_VAE]
-
-
 
 - benevolent (EXPLORING DEEP RECURRENT MODELS WITH REINFORCEMENT LEARNING FOR MOLECULE DESIGN): [benevolent][benevolent]
 

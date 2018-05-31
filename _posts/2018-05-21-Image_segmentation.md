@@ -20,6 +20,7 @@ tags:
 
 # **Fully Convolutional Networks(FCN) for Semantic Segmentation**
 
+![fcn_result](/result_images/fcn_result.PNG  "fcn_result")
 
 ## **Main Takeaway**
 

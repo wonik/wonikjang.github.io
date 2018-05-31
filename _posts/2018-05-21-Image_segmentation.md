@@ -87,7 +87,7 @@ One of random validation samples is listed below. The quality of prediction resu
 Resources that I referenced are listed at the bottom of this post.
 
  - FCN semantic segmentation paper: [FCN Paper][FCN_Paper]
- [FCN_Paper]: https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf
+ [FCN_Paper]:https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf
 
  - Github code : [FCN github][FCN_github]
- [FCN_github]: https://github.com/shekkizh/FCN.tensorflow
+ [FCN_github]:https://github.com/shekkizh/FCN.tensorflow

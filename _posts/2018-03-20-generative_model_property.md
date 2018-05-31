@@ -5,6 +5,7 @@ layout: post
 author: Wonik Jang
 category: Generative Models
 tags:
+- Literature Review & Implementation
 - Generative Model
 - Variational Autoencoder(VAE)
 - Adversarial Autoencoder(AAE)

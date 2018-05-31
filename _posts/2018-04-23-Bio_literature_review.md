@@ -27,10 +27,10 @@ tags:
 |category|Paper|Model|Takeaway|
 |---|---|---|---|---|
 |New Chemical Design|BenovolentAI|RNN based RL (HC-MLE)|Reinfocement Learning with 19 benchmark|
-|^  |VAE_property|VAE(1D CNN & RNN) wth property(GP)|Variatioanl AutoEncoder jointly predicting property|
-|^  |ChemTS|MonteCarlo Tree Search with RNN|Cascading way and RNN is used at RollOut step|
-|^  |DruGAN|Adversarial AutoEncoder|AAE is better than VAE|Reconstruction error and Diversity|
-|^  |InSilico|RNN-LSTM|Unique Scaffolds can be achieved|
+|                   |VAE_property|VAE(1D CNN & RNN) wth property(GP)|Variatioanl AutoEncoder jointly predicting property|
+|                   |ChemTS|MonteCarlo Tree Search with RNN|Cascading way and RNN is used at RollOut step|
+|                   |DruGAN|Adversarial AutoEncoder|AAE is better than VAE in terms of Reconstruction error and Diversity|
+|                   |InSilico|RNN-LSTM|Unique Scaffolds can be achieved|
 |---|---|---|---|---|
 |Property Prediction|DeepChem|Graph Convolution|Considering 2D strucutre is critical|
 |---|---|---|---|---|
@@ -50,7 +50,7 @@ For the sake of compactness, I would demonstrate two methods **Hillclimb MLE (HC
 <br/>
 
 
-# 1. **Hillclimb MLE (HC-MLE)**
+### 1. **Hillclimb MLE (HC-MLE)**
 
 ![beno_mle_algorithm](/result_images/beno_mle_algorithm.PNG  "beno_mle_algorithm")
 
@@ -59,14 +59,14 @@ Secondly, HC-MLE mazimizes the likelihood of sequences that received Top K highe
 
 <br/>
 
-# 2. **Monte Carlo Tree Search (MCTS)**
+### 2. **Monte Carlo Tree Search (MCTS)**
 
 ![chemts_procedure](/result_images/chemts_procedure.PNG  "chemts_procedure")
 
-- 1. Pretrain RNN and Get Conditional Probability
-- 2. Conditional Probability is used in MCTS as sampling distribution to get next character and elongate the smiles code
-- 3. Reward score of generated smiles code is computed
-- 4. In Back propagation, reward is back propagated & UCB at each node is updated
+1. Pretrain RNN and Get Conditional Probability
+2. Conditional Probability is used in MCTS as sampling distribution to get next character and elongate the smiles code
+3. Reward score of generated smiles code is computed
+4. In Back propagation, reward is back propagated & UCB at each node is updated
 
 
 <br/>

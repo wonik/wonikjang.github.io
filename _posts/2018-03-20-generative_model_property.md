@@ -1,6 +1,6 @@
 ---
 title: Generative Model : Derivatives of Autoencoder
-updated: 2017-03-20 22:35
+updated: 2018-03-20 22:35
 layout: post
 author: Wonik Jang
 category: Generative Models

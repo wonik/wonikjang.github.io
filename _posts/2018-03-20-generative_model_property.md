@@ -400,29 +400,13 @@ def train( re_training = False ) :
                     print( "skip epoch {}...".format( epoch ) )
                     continue
 
-
-            t1 = datetime.now()
-
-            epoch_cost_de = []
-            epoch_cost_nml = []
-            epoch_cost_kl = []                
-            epoch_cost_fc = []
-
             for i in range( num_rs ) :
 
                 batch, props = sof.GetOnehotBatch( batch_size )
                 imgs         = batch.reshape( [ - 1, ohlen, chnum, 1 ] )
-
-                t3           = datetime.now()
-
+                
                 cs_ae, cs_nml, cs_kl, cs_fc, _ = sess.run( [ cost_ae, NML, KL ,loss_fc, optimizer_ae ],
                                                          feed_dict={ x : imgs, label : imgs, prop : props } )
-                t4           = datetime.now()
-
-                epoch_cost_de.append( cs_ae )
-                epoch_cost_nml.append( cs_nml )
-                epoch_cost_kl.append( cs_kl )
-                epoch_cost_fc.append( cs_fc )
 
                 if i % print_time == 0 :
                     print( ver_str + "      Max Length : " + str( ohlen ) + "      Using GPU : " + gpu_num )
@@ -432,32 +416,7 @@ def train( re_training = False ) :
                            "NML loss : {:.6f}     ".format( cs_nml )              +
                            "KL loss : {:.6f}     ".format( cs_kl )              +
                            "    Prop Regression loss : {:.6f}".format( cs_fc )  +  
-                           "    duration time : " + str( t4 - t3 ) )
-
-            t2 = datetime.now()
-            print( " time          : " + str( t2 - t1 ) )
-            print( " Epoch {}      VAE Cost    : {}".format( epoch + 1, sum( epoch_cost_de ) / len( epoch_cost_de ) ) )
-            print( " Epoch {}      NML  Cost : {}".format( epoch + 1, sum( epoch_cost_nml ) / len( epoch_cost_nml ) ) )
-            print( " Epoch {}      KL Cost : {}".format( epoch + 1, sum( epoch_cost_kl ) / len( epoch_cost_kl ) ) )
-            print( " Epoch {} Prop Regression Cost : {}".format( epoch + 1, sum( epoch_cost_fc ) / len( epoch_cost_fc ) ) )
-
-            with open( log_path, "a+" ) as txt :
-                txt.write( "#------------------------------------------------" )
-                txt.write( "\n" )
-
-                txt.write( " Epoch {} VAE Cost         : {}".format( epoch + 1, sum( epoch_cost_de ) / len( epoch_cost_de ) ) )
-                txt.write( "\n" )
-
-                txt.write( " Epoch {} NML Cost         : {}".format( epoch + 1, sum( epoch_cost_nml ) / len( epoch_cost_nml ) ) )
-                txt.write( "\n" )
-
-                txt.write( " Epoch {} KL Cost         : {}".format( epoch + 1, sum( epoch_cost_kl ) / len( epoch_cost_kl ) ) )
-                txt.write( "\n" )
-
-                txt.write( " Epoch {} Prop Regression Cost : {}".format( epoch + 1, sum( epoch_cost_fc ) / len( epoch_cost_fc ) ) )
-                txt.write( "\n" )
-
-                txt.write( "\n" )
+                           "    duration time : " + str( t4 - t3 ) 
 
             if ( epoch + 1 ) % save_epoch == 0 :
                 saver.save( sess, model_path, global_step = ( epoch + 1 ) )

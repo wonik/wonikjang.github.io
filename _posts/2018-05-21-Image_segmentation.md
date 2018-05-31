@@ -47,12 +47,14 @@ Semantic Segmentation using FCN doesn't require it and applied smart way of pixe
 
 ## **Details of Features**
 
+
+1. Spatial Map
+With regard to "1. Spatial Map", it allows us to get heatmap not vector output, which convert classification problem into coarse spatial map.  
+	
 ![fcn_summary3](/result_images/fcn_summary3.PNG  "fcn_summary3")
 
 <br/>
 
-1. Spatial Map
-	With regard to "1. Spatial Map", it allows us to get heatmap not vector output, which convert classification problem into coarse spatial map.  
 
 2. Deconvolution
 	Upsampling the coarse spatial map into pixel of original image is performed through in-network nonlinear upsampling (DeConvolution). Since DeConvolutioon is implemented using reverse the forward and backward of convolution, the filter(e.g. 'W_t1') of DeConvoltion layer('tf.nn.conv2d_transpose' in Tensorflow) can also be learned.

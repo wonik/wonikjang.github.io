@@ -74,22 +74,32 @@ Secondly, HC-MLE mazimizes the likelihood of sequences that received Top K highe
 
 ## **Reference**
 
+- Github of VAE with property prediction : [Chemical VAE][Chemical_VAE]
+
+
+
 - benevolent (EXPLORING DEEP RECURRENT MODELS WITH REINFORCEMENT LEARNING FOR MOLECULE DESIGN): [benevolent][benevolent]
-[benevolent]: https://openreview.net/pdf?id=HkcTe-bR-
+
+[benevolent]:https://openreview.net/pdf?id=HkcTe-bR-
 
 - VAE with Property (Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules): [vae_property][vae_property]
-[vae_property]: https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572
+
+[vae_property]:https://pubs.acs.org/doi/abs/10.1021/acscentsci.7b00572
 
 - ChemTS (Python Library): [ChemTS][ChemTS]
-[ChemTS]: file:///E:/sk_biopharm_db/papers/C&C/ChemTS%20an%20efficient%20python%20library%20for%20de%20novo%20molecular%20generation.pdf
+
+[ChemTS]:https://arxiv.org/abs/1710.00616
 
 - druGAN (druGAN: An Advanced Generative Adversarial Autoencoder Model 2 for de Novo Generation of New Molecules with Desired Molecular 3 Properties in Silico ): [druGAN][druGAN]
-[druGAN]: https://pubs.acs.org/doi/abs/10.1021/acs.molpharmaceut.7b00346
-s
+
+[druGAN]:https://pubs.acs.org/doi/abs/10.1021/acs.molpharmaceut.7b00346
+
 - InSilico (In silico generation of novel, drug-like chemical matter using the LSTM neural network ): [InSilico][InSilico]
-[InSilico]: https://pdfs.semanticscholar.org/5463/d9356e5a149ecf2e70362b0f47bd1dc28ddc.pdf
+
+[InSilico]:https://pdfs.semanticscholar.org/5463/d9356e5a149ecf2e70362b0f47bd1dc28ddc.pdf
 
 - DeepChem (Applying Automated Machine Learning to Drug Discovery) : N/A
 
 - SwissTarget (SwissTargetPrediction: a web server for target prediction of bioactive small molecules ): [SwissTarget][SwissTarget]
-[SwissTarget]: https://www.ncbi.nlm.nih.gov/pubmed/24792161
+
+[SwissTarget]:https://www.ncbi.nlm.nih.gov/pubmed/24792161

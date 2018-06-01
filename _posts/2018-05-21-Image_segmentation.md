@@ -82,7 +82,9 @@ One of random validation samples is listed below. The quality of prediction resu
 
 ![fcn_result](/result_images/fcn_result.PNG  "fcn_result")
 
+Reulsts in Paper
 
+![FCN_fig3](/result_images/FCN_fig3.PNG  "FCN_fig3")
 
 
 ## **Reference**

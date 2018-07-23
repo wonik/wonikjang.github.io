@@ -26,9 +26,9 @@ tags:
 
 ![fcn_summary1](/result_images/fcn_summary1.PNG  "fcn_summary1")
 
-In this post, I reviewd theFCN-Semantic Segmentation paper and implemented semantic segmentation on MIT Scence Parsing data.  
-While object detection methods like R-CNN heavily hinge on sliding windows, except for YOLO,
-Semantic Segmentation using FCN doesn't require it and applied smart way of pixel-wise classification. To make it possible, FCN implements 3 distinctive features in their network.
+In this post, I will implement Fully Convolutional Networks(FCN) for semantic segmentation on MIT Scence Parsing data.  
+While object detection methods like R-CNN heavily hinge on sliding windows (except for YOLO),
+FCN doesn't require it and applied smart way of pixel-wise classification. To make it possible, FCN implements 3 distinctive features in their network.
 
 <br/>
 
